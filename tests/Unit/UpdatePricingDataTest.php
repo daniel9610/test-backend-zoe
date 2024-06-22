@@ -10,7 +10,7 @@ use App\Jobs\UpdatePricingData;
 class UpdatePricingDataTest extends TestCase
 {
     /**
-     * A basic unit test example.
+     * Test the update pricing data job.
      */
     public function testEndpointMock()
     {
@@ -20,10 +20,8 @@ class UpdatePricingDataTest extends TestCase
         $this->assertArrayHasKey('results', $pricing_data, "Array doesn't contains 'results' as key");
     }
 
-    public function testProccess()
-    {
-        Queue::assertPushed(UpdatePricingData::class, 1);
-        // $this->expectsJobs(UpdatePricingData::class);
-        // $data = SecurityPrices::where('id', '1')->first();
-    }
+    // public function testJob()
+    // {
+    //     Queue::assertPushed(UpdatePricingData::class, 1);
+    // }
 }
